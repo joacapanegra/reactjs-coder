@@ -31,7 +31,7 @@ export const ItemDetail = ({
         </div>
       </div>
 
-      {initial && <h6 className="pou">Ya tienes {initial} unidades</h6>}
+      {initial && <h6 className="pou">Ya tienes {initial} unidad/es</h6>}
 
       {showCounter ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
