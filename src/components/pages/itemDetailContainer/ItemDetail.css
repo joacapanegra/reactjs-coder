@@ -1,0 +1,57 @@
+.containerItemDetail {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.containerImage {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.containerImage > img {
+  width: 50%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.containerDetail {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+  color: #7f669d;
+}
+
+h2 span {
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  background-color: pink;
+}
+
+.pro {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: x-large;
+  background-color: palevioletred;
+  color: white;
+  border: 5px ridge black;
+  margin: 10px;
+}
+
+.pro:hover {
+  color: black;
+  background-color: white;
+}
+
+.pou {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}

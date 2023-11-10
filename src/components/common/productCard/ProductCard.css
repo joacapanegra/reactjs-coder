@@ -1,0 +1,40 @@
+.cuadrado {
+  background-color: rgb(255, 234, 238);
+  position: relative;
+}
+
+.cudra-masinfo {
+  position: absolute;
+  bottom: 0;
+}
+
+.cudra-masinfo button {
+  border: solid;
+  color: black;
+}
+
+.cudra-masinfo button:hover {
+  border: none;
+  border-bottom: solid 2px black;
+  border-top: solid 6px black;
+  border-radius: 150px;
+}
+
+.nombre-product {
+  font-size: 4.5vh;
+  font-weight: bold;
+}
+
+.descri {
+  font-size: 110%;
+}
+
+.precio {
+  font-weight: bold;
+  margin: 10px;
+  font-size: 100%;
+  border-top: 5px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}

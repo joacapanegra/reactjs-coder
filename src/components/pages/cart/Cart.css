@@ -1,0 +1,45 @@
+.total {
+  margin-bottom: 50px;
+  border-radius: 5px;
+  border: 10px pink double;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.p-title {
+  text-align: center;
+  font-size: 35px;
+  background-color: pink;
+}
+
+.paso-final {
+  background-color: antiquewhite;
+}
+
+.paso-final h3 {
+  font-size: 20px;
+}
+
+.flecha {
+  font-size: 50px;
+  text-align: center;
+}
+
+.fin-compra button {
+  margin: 10px;
+  background-color: pink;
+  color: black;
+}
+
+.main-fin {
+  background-color: antiquewhite;
+}
+
+.main-fin h1 {
+  margin-bottom: 40px;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: underline wavy;
+  text-transform: uppercase;
+}
