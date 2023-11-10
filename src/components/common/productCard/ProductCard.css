@@ -1,23 +1,26 @@
 .cuadrado {
   background-color: rgb(255, 234, 238);
-  position: relative;
+  height: 100vh;
+}
+
+.img-pro {
+  align-items: center;
 }
 
 .cudra-masinfo {
-  position: absolute;
   bottom: 0;
 }
 
 .cudra-masinfo button {
-  border: solid;
   color: black;
+  font-weight: bold;
 }
 
 .cudra-masinfo button:hover {
   border: none;
-  border-bottom: solid 2px black;
+  border-bottom: solid 6px black;
   border-top: solid 6px black;
-  border-radius: 150px;
+  border-radius: 20%;
 }
 
 .nombre-product {
@@ -26,15 +29,22 @@
 }
 
 .descri {
-  font-size: 110%;
+  font-size: 80%;
 }
 
 .precio {
   font-weight: bold;
   margin: 10px;
-  font-size: 100%;
+  font-size: 80%;
   border-top: 5px solid black;
   border-bottom: 2px solid black;
   border-radius: 10px;
   text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 25vh;
+}
+
+.cardContent {
+  display: inline-block;
 }

@@ -19,12 +19,6 @@ h4 {
   text-decoration: none;
 }
 
-h4:hover {
-  background-color: pink;
-  text-decoration: wavy;
-  text-transform: lowercase;
-}
-
 h2 {
   color: black;
   font-weight: bold;
@@ -63,4 +57,51 @@ div .bienvenida h1 {
 
 .main-princi {
   background-color: #7f669d;
+}
+
+.ig {
+  max-width: 30px;
+  background-color: pink;
+  margin-left: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer h5 {
+  margin: 0;
+  font-family: fantasy;
+}
+
+.flash-text {
+  font-weight: bold;
+  color: #000000;
+  animation: flash 2s infinite;
+}
+
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px #ff5100;
+  }
+  25%,
+  75% {
+    opacity: 0;
+    text-shadow: none;
+  }
 }

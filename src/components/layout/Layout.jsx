@@ -10,7 +10,7 @@ const Layout = () => {
       </div>
       <div style={{ minHeight: "80vh", marginBottom: "30px" }}>
         <section className="bienvenida">
-          <h1>¡La tienda Oficial de Hemisferio Darwin</h1>
+          <h1>¡La tienda Oficial de Hemisferio Darwin!</h1>
         </section>
         <Outlet />
       </div>

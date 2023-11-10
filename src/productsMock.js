@@ -19,7 +19,7 @@ export let products = [
   },
   {
     id: 3,
-    title: "Camiseta modelos 1",
+    title: "Camiseta Blanca",
     price: 8000,
     stock: 4,
     description: "Camiseta color blanco con diseño de la banda a su espalda",
@@ -28,7 +28,7 @@ export let products = [
   },
   {
     id: 4,
-    title: "Camiseta modelos 2",
+    title: "Camiseta Negra",
     price: 8000,
     stock: 4,
     description:

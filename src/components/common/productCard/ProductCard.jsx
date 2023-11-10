@@ -11,11 +11,12 @@ import "./ProductCard.css";
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{ width: 300, height: "90vh" }} className="cuadrado">
+    <Card sx={{ width: 300 }} className="cuadrado">
       <CardMedia
-        sx={{ height: 200 }}
+        sx={{ height: 300 }}
         image={item.img}
         title={`image ${item.title}`}
+        className="img-pro"
       />
       <CardContent>
         <Typography
@@ -26,7 +27,13 @@ const ProductCard = ({ item }) => {
         >
           {item.title}
         </Typography>
-        <Typography variant="h6" color="text.secondary" className="descri">
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          className="descri"
+          fontSize={"18px"}
+          marginBottom={"10px"}
+        >
           {item.description}
         </Typography>
         <Typography variant="body1" className="precio">
