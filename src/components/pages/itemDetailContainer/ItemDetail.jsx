@@ -31,7 +31,7 @@ export const ItemDetail = ({
         </div>
       </div>
 
-      {initial && <h6 className="pou">Ya tienes {initial} unidad/es</h6>}
+      {initial && <h4 className="pou">Ya tienes {initial} unidades</h4>}
 
       {showCounter ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -42,8 +42,8 @@ export const ItemDetail = ({
           />
         </div>
       ) : (
-        <Link to="/cart">
-          <h5 className="pro">Ir a comprar</h5>
+        <Link to="/cart" className="pro">
+          Terminar compra
         </Link>
       )}
     </div>

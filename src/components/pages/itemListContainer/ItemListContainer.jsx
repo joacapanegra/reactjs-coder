@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { products } from "../../../productsMock";
-
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import BeatLoader from "react-spinners/BeatLoader";
 import Skeleton from "@mui/material/Skeleton";
+import { getDocs, collection, query, where, addDoc } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -12,17 +11,26 @@ const ItemListContainer = () => {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    const productosFiltrados = products.filter(
-      (product) => product.category === categoryName
-    );
+    let productsCollection = collection(db, "products");
 
-    const tarea = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryName ? productosFiltrados : products);
-      }, 500);
+    let consulta = undefined;
+
+    if (!categoryName) {
+      consulta = productsCollection;
+    } else {
+      consulta = query(
+        productsCollection,
+        where("category", "==", categoryName)
+      );
+    }
+
+    getDocs(consulta).then((res) => {
+      let newArray = res.docs.map((product) => {
+        return { ...product.data(), id: product.id };
+      });
+
+      setItems(newArray);
     });
-
-    tarea.then((res) => setItems(res)).catch((error) => console.log(error));
   }, [categoryName]);
 
   return (

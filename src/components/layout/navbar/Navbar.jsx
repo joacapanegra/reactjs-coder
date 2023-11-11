@@ -1,24 +1,41 @@
+import { useEffect, useState } from "react";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import "./Navbar.css";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
 export const Navbar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let arrayCategories = res.docs.map((category) => {
+          return { ...category.data(), id: category.id };
+        });
+        setCategories(arrayCategories);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className={"containerNavbar"}>
         <Link to="/">
-          <h4>Hemisfeiro Darwin</h4>
+          <h4>Hemisferio Darwin</h4>
         </Link>
         <ul className="categories">
-          <Link to="/">
-            <li>Inicio</li>
+          <Link to={"/"}>
+            <li>Todas</li>
           </Link>
-          <Link to="/category/stickers">
-            <li>Stickers</li>
-          </Link>
-          <Link to="/category/camisetas">
-            <li>Camisetas</li>
-          </Link>
+          {categories.map((category) => (
+            <Link key={category.id} to={category.path}>
+              <li>{category.name}</li>
+            </Link>
+          ))}
         </ul>
         <CartWidget />
       </div>

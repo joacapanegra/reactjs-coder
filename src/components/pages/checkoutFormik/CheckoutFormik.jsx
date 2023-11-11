@@ -1,3 +1,4 @@
+import { Margin } from "@mui/icons-material";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -39,8 +40,6 @@ const CheckoutFormik = () => {
         .oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
     }),
   });
-
-  console.log(errors);
 
   return (
     <div style={{ padding: "50px" }}>
@@ -87,14 +86,15 @@ const CheckoutFormik = () => {
           error={errors.repetPassword ? true : false}
           helperText={errors.repetPassword}
         />
+        <div>
+          <Button variant="contained" type="submit" style={{ margin: "10px" }}>
+            Enviar
+          </Button>
 
-        <Button variant="contained" type="submit">
-          Enviar
-        </Button>
-
-        <Button variant={"outlined"} type="button">
-          Cancelar
-        </Button>
+          <Button variant={"contained"} type="button">
+            Cancelar
+          </Button>
+        </div>
       </form>
     </div>
   );

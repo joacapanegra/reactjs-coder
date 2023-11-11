@@ -36,13 +36,15 @@ h2 span {
 }
 
 .pro {
-  text-align: center;
+  width: 100%;
   text-transform: capitalize;
   font-size: x-large;
   background-color: palevioletred;
   color: white;
   border: 5px ridge black;
   margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 .pro:hover {

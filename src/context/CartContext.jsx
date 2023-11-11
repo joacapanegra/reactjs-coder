@@ -1,9 +1,12 @@
+import { LocalAtmRounded } from "@mui/icons-material";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
 const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
   const addToCart = (product) => {
     let exist = isInCart(product.id);
@@ -19,8 +22,10 @@ const CartContextComponent = ({ children }) => {
         }
       });
       setCart(newArr);
+      localStorage.setItem("cart", JSON.stringify(newArr));
     } else {
       setCart([...cart, product]);
+      localStorage.setItem("cart", JSON.stringify([...cart, product]));
     }
   };
 
@@ -36,11 +41,13 @@ const CartContextComponent = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
   };
 
   const deleteProductById = (id) => {
     let newArr = cart.filter((product) => product.id !== id);
     setCart(newArr);
+    localStorage.setItem("cart", JSON.stringify(newArr));
   };
 
   const getTotalPrice = () => {
