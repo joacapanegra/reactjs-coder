@@ -13,7 +13,8 @@ const CheckoutFormik = () => {
     },
 
     onSubmit: (data) => {
-      console.log("se envio");
+      console.log("Contraseña:", data.password);
+      console.log("se envió");
       console.log(data);
     },
 
@@ -30,9 +31,8 @@ const CheckoutFormik = () => {
         .required("El campo es obligatorio"),
       password: Yup.string()
         .required("El campo es obligatorio")
-        .matches(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,15}$/, {
-          message:
-            "La contraseña debe tener al menos una mayuscual y un numero",
+        .matches(/^(?=.*[a-zA-Z0-9!@#$%^&*]).{6,}$/, {
+          message: "La contraseña debe tener al menos 6 caracteres",
         }),
       repetPassword: Yup.string()
         .required("El campo es obligatorio")
@@ -40,7 +40,7 @@ const CheckoutFormik = () => {
     }),
   });
 
-  console.log(errors); // {nombre: "ewrrorasd", apellido: "dasdsadasd "}
+  console.log(errors);
 
   return (
     <div style={{ padding: "50px" }}>

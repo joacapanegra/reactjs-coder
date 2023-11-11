@@ -43,7 +43,7 @@ const ProductCard = ({ item }) => {
       <CardActions className="cudra-masinfo">
         <Link to={`/itemDetail/${item.id}`}>
           <Button size="small" variant="outlined" class>
-            Añadir al carro
+            Ir a detalles
           </Button>
         </Link>
       </CardActions>

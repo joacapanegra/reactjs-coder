@@ -22,7 +22,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         clearCart();
-        Swal.fire("Carrito vaciadp😥!", "", "success");
+        Swal.fire("Carrito vacio😥!", "", "success");
       } else if (result.isDenied) {
         Swal.fire("El carrito esta igual de lleno que antes", "", "warning");
       }
